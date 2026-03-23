@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CNS Communications</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background-color: #f5f5f5;
+    }
+    header {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+    }
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      animation: slideAnimation 24s infinite;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slide:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1581090700227-4c6d6b3f60d3?auto=format&fit=crop&w=1470&q=80'); animation-delay: 0s; }
+    .slide:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1581092580497-684f5db9f2b5?auto=format&fit=crop&w=1470&q=80'); animation-delay: 8s; }
+    .slide:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1560264418-5fdc95a648a1?auto=format&fit=crop&w=1470&q=80'); animation-delay: 16s; }
+
+    @keyframes slideAnimation {
+      0%,33% { opacity: 1; }
+      33.01%,100% { opacity: 0; }
+    }
+
+    header h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 3em;
+      background: rgba(0,0,0,0.5);
+      padding: 20px 40px;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    nav {
+      background: linear-gradient(90deg, #222, #444);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      font-weight: 600;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    nav a:hover { color: #f0a500; }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.2em;
+      color: #222;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .service-card {
+      background: linear-gradient(145deg, #fff, #f0f0f0);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      padding: 30px 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    }
+    .service-card i {
+      font-size: 3em;
+      color: #f0a500;
+      margin-bottom: 15px;
+    }
+    .service-card h3 {
+      font-size: 1.2em;
+      color: #222;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+    .contact-info a {
+      color: #f0a500;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-info button {
+      padding: 12px 25px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background: #f0a500;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .contact-info button:hover { background: #222; }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 25px 0;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2em; padding: 15px 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with slideshow -->
+  <header id="home">
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <h1>CNS Communications</h1>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service-card">
+        <i class="fas fa-desktop"></i>
+        <h3>Computer Accessories</h3>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-wifi"></i>
+        <h3>Internet Services</h3>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-print"></i>
+        <h3>Flyers, Posters & Printing</h3>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-id-card"></i>
+        <h3>Business Cards & Typing</h3>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-tshirt"></i>
+        <h3>T-shirt Printing & Corporate Gifting</h3>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-tv"></i>
+        <h3>DSTV, Event Tickets & Quotation Books</h3>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-bone"></i>
+        <h3>Meat Bones & Noodles</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <p>📞 Call: <a href="tel:0659970090">065-997-0090</a></p>
+      <p>💬 WhatsApp: <a href="https://wa.me/0739050154" target="_blank">073-905-0154</a></p>
+      <p>✉ Email: <a href="mailto:cnscommunications1@gmail.com">cnscommunications1@gmail.com</a></p>
+      <button onclick="window.open('https://wa.me/0739050154')">Request a Quote</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 CNS Communications. All rights reserved.
+  </footer>
+
+</body>
+</html>
